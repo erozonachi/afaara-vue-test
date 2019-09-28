@@ -28,6 +28,9 @@ export default {
         console.error(error);
       }
     }
+  },
+  created: async function() {
+    await this.fetchUsers();
   }
 };
 </script>
