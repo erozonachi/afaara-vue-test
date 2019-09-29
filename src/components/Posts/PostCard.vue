@@ -24,6 +24,8 @@ export default {
   box-sizing: border-box;
   max-width: 800px;
   width: 100%;
+  max-height: 200px;
+  height: 150px;
   padding: 10px;
   margin-bottom: 20px;
   border-radius: 8px;

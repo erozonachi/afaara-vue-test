@@ -1,5 +1,5 @@
 <template>
-  <router-link to="'/users/' + user.id" class="user-card">
+  <router-link :to="'/users/' + user.id" class="user-card">
     <div class="content">
       <span class="avatar">{{user.name.charAt(0)}}</span>
       <h3>{{user.name}}</h3>
@@ -54,6 +54,8 @@ export default {
   box-sizing: border-box;
   max-width: 800px;
   width: 100%;
+  max-height: 200px;
+  height: 170px;
   padding: 10px;
   margin-bottom: 20px;
   border-radius: 8px;
