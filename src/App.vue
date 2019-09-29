@@ -1,43 +1,16 @@
 <template>
   <div id="app">
-    <UserList :users="users" :fetch="fetchUsers" />
+    <UserList />
   </div>
 </template>
 
 <script>
 import UserList from "./components/Users/UserList.vue";
-import axios from "axios";
 
 export default {
   name: "app",
   components: {
     UserList
-  },
-  data: () => ({
-    users: [],
-    posts: []
-  }),
-  methods: {
-    fetchUsers: async function() {
-      try {
-        const { data } = await axios.get(
-          `https://jsonplaceholder.typicode.com/users/`
-        );
-        this.users = data;
-      } catch (error) {
-        //console.log(error);
-      }
-    },
-    fetchPosts: async function() {
-      try {
-        const { data } = await axios.get(
-          `https://jsonplaceholder.typicode.com/users/1/posts`
-        );
-        this.posts = data.filter(item => item.userId === 1);
-      } catch (error) {
-        //console.log(error);
-      }
-    }
   }
 };
 </script>

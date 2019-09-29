@@ -7,24 +7,31 @@
 
 <script>
 import PostCard from "./PostCard.vue";
+import axios from "axios";
 
 export default {
   name: "PostList",
   components: {
     PostCard
   },
-  props: {
-    posts: {
-      type: Array,
-      required: true
-    },
-    fetch: {
-      type: Function,
-      required: true
+
+  data: () => ({
+    posts: []
+  }),
+  methods: {
+    fetchPosts: async function() {
+      try {
+        const { data } = await axios.get(
+          `https://jsonplaceholder.typicode.com/users/1/posts`
+        );
+        this.posts = data.filter(item => item.userId === 1);
+      } catch (error) {
+        //console.log(error);
+      }
     }
   },
   created: async function() {
-    await this.fetch();
+    await this.fetchPosts();
   }
 };
 </script>

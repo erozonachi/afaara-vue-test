@@ -7,24 +7,31 @@
 
 <script>
 import UserCard from "./UserCard.vue";
+import axios from "axios";
 
 export default {
   name: "UserList",
   components: {
     UserCard
   },
-  props: {
-    users: {
-      type: Array,
-      required: true
-    },
-    fetch: {
-      type: Function,
-      required: true
+
+  data: () => ({
+    users: []
+  }),
+  methods: {
+    fetchUsers: async function() {
+      try {
+        const { data } = await axios.get(
+          `https://jsonplaceholder.typicode.com/users/`
+        );
+        this.users = data;
+      } catch (error) {
+        //console.log(error);
+      }
     }
   },
   created: async function() {
-    await this.fetch();
+    await this.fetchUsers();
   }
 };
 </script>
