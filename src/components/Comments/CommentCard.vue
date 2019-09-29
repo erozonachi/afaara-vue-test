@@ -75,7 +75,7 @@ p {
 }
 @media (max-width: 550px) {
   .card {
-    height: 250px;
+    height: 300px;
   }
 }
 </style>

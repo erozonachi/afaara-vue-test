@@ -43,6 +43,11 @@ export default {
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.12);
   border: 1px solid #4265ed;
 }
+@media (max-width: 550px) {
+  .post-card {
+    height: 260px;
+  }
+}
 h3 {
   font-size: 120%;
   font-weight: 600;
