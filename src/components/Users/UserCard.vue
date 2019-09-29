@@ -6,19 +6,19 @@
     </div>
     <div class="content">
       <div class="user-info">
-        <img src alt="Phone:" />
+        <img :src="phoneIcon" alt="Phone:" />
         <span>{{user.phone}}</span>
       </div>
       <div class="user-info">
-        <img src alt="Email:" />
+        <img :src="emailIcon" alt="Email:" />
         <span>{{user.email}}</span>
       </div>
       <div class="user-info">
-        <img src alt="City:" />
+        <img :src="cityIcon" alt="City:" />
         <span>{{user.address.city}}</span>
       </div>
       <div class="user-info">
-        <img src alt="Website:" />
+        <img :src="webIcon" alt="Website:" />
         <span>{{user.website}}</span>
       </div>
     </div>
@@ -26,6 +26,10 @@
 </template>
 
 <script>
+import phoneIcon from "../../assets/call.svg";
+import emailIcon from "../../assets/email.svg";
+import cityIcon from "../../assets/city.svg";
+import webIcon from "../../assets/web.svg";
 export default {
   name: "UserCard",
   props: {
@@ -33,7 +37,13 @@ export default {
       type: Object,
       required: true
     }
-  }
+  },
+  data: () => ({
+    phoneIcon,
+    emailIcon,
+    cityIcon,
+    webIcon
+  })
 };
 </script>
 
@@ -84,6 +94,7 @@ h3 {
   margin: 0 10px;
   color: #333333;
   font-weight: bold;
+  width: 20px;
 }
 .user-info span {
   font-size: 100%;
