@@ -65,6 +65,6 @@ nav > div > span {
   width: 10px;
   height: 10px;
   border-radius: 5px;
-  background-color: rgba(255, 2555, 255, 0.9);
+  background-color: rgba(255, 2555, 255, 1);
 }
 </style>

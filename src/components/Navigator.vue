@@ -45,14 +45,16 @@ a {
   text-transform: capitalize;
 }
 .container {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 .container a {
-  border-radius: 8px;
+  height: 40px;
+  border-radius: 20px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.06);
   text-decoration: none;
   margin-right: 40px;
   background-color: #ffffff;
+  padding: 0 10px;
 }
 a:link {
   color: inherit;

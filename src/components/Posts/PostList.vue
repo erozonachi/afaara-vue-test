@@ -1,5 +1,6 @@
 <template>
   <div class="posts-container" v-if="posts.length">
+    <Navigator path="/" name="users" title="posts" />
     <PostCard v-for="post of posts" :post="post" :key="post.id" />
   </div>
   <Loader v-else-if="isFetching" />
@@ -9,13 +10,15 @@
 <script>
 import PostCard from "./PostCard.vue";
 import Loader from "../Loader.vue";
+import Navigator from "../Navigator.vue";
 import axios from "axios";
 
 export default {
   name: "PostList",
   components: {
     PostCard,
-    Loader
+    Loader,
+    Navigator
   },
 
   data: () => ({
