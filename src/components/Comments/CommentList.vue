@@ -68,4 +68,9 @@ h3 {
   color: #4f4f4f;
   margin-bottom: 10px;
 }
+@media (max-width: 550px) {
+  .container {
+    margin-left: 10px;
+  }
+}
 </style>

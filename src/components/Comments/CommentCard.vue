@@ -73,4 +73,9 @@ p {
   margin-left: 20px;
   line-height: 18px;
 }
+@media (max-width: 550px) {
+  .card {
+    height: 250px;
+  }
+}
 </style>
