@@ -2,31 +2,37 @@
   <div class="users-container" v-if="users.length">
     <UserCard v-for="user of users" :user="user" :key="user.id" />
   </div>
+  <Loader v-else-if="isFetching" />
   <div class="users-container" v-else>No user found</div>
 </template>
 
 <script>
 import UserCard from "./UserCard.vue";
+import Loader from "../Loader.vue";
 import axios from "axios";
 
 export default {
   name: "UserList",
   components: {
-    UserCard
+    UserCard,
+    Loader
   },
 
   data: () => ({
-    users: []
+    users: [],
+    isFetching: false
   }),
   methods: {
     fetchUsers: async function() {
       try {
+        this.isFetching = true;
         const { data } = await axios.get(
           `https://jsonplaceholder.typicode.com/users/`
         );
         this.users = data;
+        this.isFetching = false;
       } catch (error) {
-        //console.log(error);
+        this.isFetching = false;
       }
     }
   },
