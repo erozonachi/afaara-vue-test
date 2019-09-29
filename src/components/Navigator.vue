@@ -55,6 +55,10 @@ a {
   margin-right: 40px;
   background-color: #ffffff;
   padding: 0 10px;
+  transition: 0.5s ease-in-out;
+}
+.container a:hover {
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 a:link {
   color: inherit;
