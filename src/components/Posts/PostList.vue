@@ -22,9 +22,11 @@ export default {
     fetchPosts: async function() {
       try {
         const { data } = await axios.get(
-          `https://jsonplaceholder.typicode.com/users/1/posts`
+          `https://jsonplaceholder.typicode.com/users/${this.$route.params.id}/posts`
         );
-        this.posts = data.filter(item => item.userId === 1);
+        this.posts = data.filter(
+          item => item.userId === parseInt(this.$route.params.id)
+        );
       } catch (error) {
         //console.log(error);
       }
