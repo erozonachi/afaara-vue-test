@@ -55,6 +55,15 @@ export default {
   max-width: 800px;
   width: 100%;
   padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 12px 6px rgba(0, 0, 0, 0.06);
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+.user-card:hover {
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.12);
+  border: 1px solid #4265ed;
 }
 .content {
   display: flex;
@@ -64,18 +73,22 @@ export default {
   box-sizing: border-box;
   width: 100%;
 }
+.content:first-of-type {
+  margin-bottom: 20px;
+}
 .avatar {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50px;
-  height: 50px;
-  border-radius: 25px;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
   box-sizing: border-box;
   background-color: #4265ed;
   color: #dddddd;
-  font-size: 32px;
+  font-size: 28px;
   font-weight: bold;
+  margin-right: 10px;
 }
 h3 {
   font-size: 120%;
@@ -89,10 +102,11 @@ h3 {
   align-items: center;
   box-sizing: border-box;
   width: 49%;
+  color: #333333;
+  margin-bottom: 10px;
 }
 .user-info img {
   margin: 0 10px;
-  color: #333333;
   font-weight: bold;
   width: 20px;
 }
