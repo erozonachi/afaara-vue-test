@@ -51,7 +51,7 @@ export default {
   flex-direction: column;
   box-sizing: border-box;
   max-width: 700px;
-  width: 100%;
+  width: 90%;
   margin-top: 10px;
   margin-right: 50px;
 }
