@@ -1,7 +1,7 @@
 <template>
   <div class="posts-container" v-if="posts.length">
     <Navigator :path="`/users/${userId}/posts`" name="posts" title="single post" />
-    <PostCard :post="post" />
+    <PostCard :post="post" :userId="userId" />
     <CommentList :postId="postId" />
   </div>
   <Loader v-else-if="isFetching" />
@@ -13,15 +13,14 @@ import { postMixin } from "./PostMixin";
 import CommentList from "../Comments/CommentList.vue";
 
 export default {
-  name: "PostList",
+  name: "SinglePost",
   mixins: [postMixin],
-  comments: {
+  components: {
     CommentList
   },
   data: function() {
     return {
-      postId: this.$route.params.postId,
-      userId: this.$route.params.id
+      postId: this.$route.params.postId
     };
   },
   computed: {

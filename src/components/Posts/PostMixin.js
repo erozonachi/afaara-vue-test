@@ -14,6 +14,11 @@ export const postMixin = {
     posts: [],
     isFetching: false
   }),
+  computed: {
+    userId: function () {
+      return parseInt(this.$route.params.id);
+    }
+  },
   methods: {
     fetchPosts: async function () {
       try {

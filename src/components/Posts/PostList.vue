@@ -1,7 +1,7 @@
 <template>
   <div class="posts-container" v-if="posts.length">
     <Navigator path="/" name="users" title="posts" />
-    <PostCard v-for="post of posts" :post="post" :key="post.id" />
+    <PostCard v-for="post of posts" :post="post" :userId="userId" :key="post.id" />
   </div>
   <Loader v-else-if="isFetching" />
   <div class="posts-container" v-else>No post found</div>
@@ -12,12 +12,7 @@ import { postMixin } from "./PostMixin";
 
 export default {
   name: "PostList",
-  mixins: [postMixin],
-  computed: {
-    userId: function() {
-      return parseInt(this.$route.params.id);
-    }
-  }
+  mixins: [postMixin]
 };
 </script>
 

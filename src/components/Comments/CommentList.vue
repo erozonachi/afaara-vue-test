@@ -3,21 +3,25 @@
     <h3>Comments</h3>
     <CommentCard v-for="comment of comments" :comment="comment" :key="comment.id" />
   </div>
+  <Loader v-else-if="isFetching" />
   <div class="container" v-else>No comment</div>
 </template>
 
 <script>
 import CommentCard from "./CommentCard.vue";
+import Loader from "../Loader.vue";
 import axios from "axios";
 
 export default {
   name: "CommentList",
   components: {
-    CommentCard
+    CommentCard,
+    Loader
   },
 
   data: () => ({
-    comments: []
+    comments: [],
+    isFetching: false
   }),
   props: {
     postId: {
@@ -28,14 +32,17 @@ export default {
   methods: {
     fetchComments: async function() {
       try {
+        this.isFetching = true;
         const { data } = await axios.get(
           `https://jsonplaceholder.typicode.com/posts/${this.postId}/comments`
         );
         this.comments = data.filter(
-          item => item.userId === parseInt(this.postId)
+          item => item.postId === parseInt(this.postId)
         );
+        this.isFetching = false;
       } catch (error) {
         // Die error
+        this.isFetching = false;
       }
     }
   },
@@ -53,7 +60,7 @@ export default {
   max-width: 700px;
   width: 90%;
   margin-top: 10px;
-  margin-right: 50px;
+  margin-left: 50px;
 }
 h3 {
   font-size: 120%;
