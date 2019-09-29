@@ -14,7 +14,8 @@ export default {
     UserList
   },
   data: () => ({
-    users: []
+    users: [],
+    posts: []
   }),
   methods: {
     fetchUsers: async function() {
@@ -23,6 +24,16 @@ export default {
           `https://jsonplaceholder.typicode.com/users/`
         );
         this.users = data;
+      } catch (error) {
+        //console.log(error);
+      }
+    },
+    fetchPosts: async function() {
+      try {
+        const { data } = await axios.get(
+          `https://jsonplaceholder.typicode.com/users/1/posts`
+        );
+        this.posts = data.filter(item => item.userId === 1);
       } catch (error) {
         //console.log(error);
       }
