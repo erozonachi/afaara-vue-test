@@ -17,6 +17,10 @@ export default new Router({
       path: '/users/:id/posts',
       name: 'Posts',
       component: Posts
+    },
+    {
+      path: '*',
+      redirect: '/'
     }
   ]
 });
