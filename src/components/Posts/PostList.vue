@@ -12,7 +12,12 @@ import { postMixin } from "./PostMixin";
 
 export default {
   name: "PostList",
-  mixins: [postMixin]
+  mixins: [postMixin],
+  computed: {
+    userId: function() {
+      return parseInt(this.$route.params.id);
+    }
+  }
 };
 </script>
 

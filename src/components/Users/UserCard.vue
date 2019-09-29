@@ -1,5 +1,5 @@
 <template>
-  <router-link :to="'/users/' + user.id + '/posts'" class="user-card">
+  <router-link :to="`/users/${user.id}/posts`" class="user-card">
     <div class="content">
       <span class="avatar">{{user.name.charAt(0)}}</span>
       <h3>{{user.name}}</h3>

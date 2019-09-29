@@ -1,8 +1,8 @@
 <template>
-  <div class="post-card">
+  <router-link :to="`/users/${userId}/posts/${post.id}`" class="post-card">
     <h3>{{post.title}}</h3>
     <p>{{post.body}}</p>
-  </div>
+  </router-link>
 </template>
 
 <script>
@@ -11,6 +11,10 @@ export default {
   props: {
     post: {
       type: Object,
+      required: true
+    },
+    userId: {
+      type: Number,
       required: true
     }
   }
@@ -33,6 +37,7 @@ export default {
   transition: 0.5s ease-in-out;
   cursor: pointer;
   background-color: rgba(255, 255, 255, 1);
+  text-decoration: none;
 }
 .post-card:hover {
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.12);
