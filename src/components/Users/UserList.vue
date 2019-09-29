@@ -1,5 +1,6 @@
 <template>
   <div class="users-container" v-if="users.length">
+    <Navigator title="Users" />
     <UserCard v-for="user of users" :user="user" :key="user.id" />
   </div>
   <Loader v-else-if="isFetching" />
@@ -9,13 +10,15 @@
 <script>
 import UserCard from "./UserCard.vue";
 import Loader from "../Loader.vue";
+import Navigator from "../Navigator.vue";
 import axios from "axios";
 
 export default {
   name: "UserList",
   components: {
     UserCard,
-    Loader
+    Loader,
+    Navigator
   },
 
   data: () => ({

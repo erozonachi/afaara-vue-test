@@ -45,7 +45,7 @@ a {
   text-transform: capitalize;
 }
 .container {
-  margin-bottom: 40px;
+  margin-bottom: 10px;
 }
 .container a {
   border-radius: 8px;
