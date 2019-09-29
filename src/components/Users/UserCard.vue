@@ -54,7 +54,7 @@ export default {
   box-sizing: border-box;
   max-width: 800px;
   width: 100%;
-  max-height: 200px;
+  max-height: 250px;
   height: 170px;
   padding: 10px;
   margin-bottom: 20px;
@@ -116,5 +116,13 @@ h3 {
 }
 .user-info span {
   font-size: 100%;
+}
+@media (max-width: 550px) {
+  .user-card {
+    height: 220px;
+  }
+  .user-info {
+    width: 98%;
+  }
 }
 </style>
