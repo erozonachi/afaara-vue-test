@@ -47,6 +47,8 @@ export default {
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+  max-width: 800px;
   width: 100%;
+  margin-top: 20px;
 }
 </style>

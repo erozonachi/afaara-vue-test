@@ -63,6 +63,7 @@ export default {
   transition: 0.5s ease-in-out;
   cursor: pointer;
   text-decoration: none;
+  background-color: rgba(255, 255, 255, 1);
 }
 .user-card:hover {
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.12);

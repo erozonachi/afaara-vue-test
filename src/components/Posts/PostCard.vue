@@ -32,6 +32,7 @@ export default {
   box-shadow: 0px 12px 6px rgba(0, 0, 0, 0.06);
   transition: 0.5s ease-in-out;
   cursor: pointer;
+  background-color: rgba(255, 255, 255, 1);
 }
 .post-card:hover {
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.12);

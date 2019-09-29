@@ -52,18 +52,19 @@ nav > div {
   width: 40px;
   height: 40px;
   border-radius: 20px;
-  background-color: rgba(255, 2555, 255, 0.8);
+  background-color: rgba(255, 2555, 255, 0.9);
   color: #4265ed;
   font-size: 28px;
   font-weight: bold;
+  margin: 0 2.5px;
 }
 nav > div > span {
   position: absolute;
-  right: 10px;
-  bottom: 10px;
+  right: 1px;
+  bottom: 1px;
   width: 10px;
   height: 10px;
   border-radius: 5px;
-  background-color: #4265ed;
+  background-color: rgba(255, 2555, 255, 0.9);
 }
 </style>
