@@ -1,6 +1,7 @@
 import PostCard from "./PostCard.vue";
 import Loader from "../Loader.vue";
 import Navigator from "../Navigator.vue";
+import axios from "axios";
 
 export const postMixin = {
   components: {

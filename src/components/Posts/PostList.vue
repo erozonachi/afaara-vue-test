@@ -8,10 +8,11 @@
 </template>
 
 <script>
-import axios from "axios";
+import { postMixin } from "./PostMixin";
 
 export default {
-  name: "PostList"
+  name: "PostList",
+  mixins: [postMixin]
 };
 </script>
 
