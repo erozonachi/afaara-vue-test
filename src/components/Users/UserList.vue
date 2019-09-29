@@ -1,5 +1,5 @@
 <template>
-  <div class="users-container" v-if="users">
+  <div class="users-container" v-if="users.length">
     <UserCard v-for="user of users" :user="user" :key="user.id" />
   </div>
   <div class="users-container" v-else>No user found</div>
@@ -7,30 +7,24 @@
 
 <script>
 import UserCard from "./UserCard.vue";
-import axios from "axios";
 
 export default {
   name: "UserList",
   components: {
     UserCard
   },
-  data: () => ({
-    users: null
-  }),
-  methods: {
-    fetchUsers: async function() {
-      try {
-        const { data } = await axios.get(
-          `https://jsonplaceholder.typicode.com/users/`
-        );
-        this.users = data;
-      } catch (error) {
-        //console.log(error);
-      }
+  props: {
+    users: {
+      type: Array,
+      required: true
+    },
+    fetch: {
+      type: Function,
+      required: true
     }
   },
   created: async function() {
-    await this.fetchUsers();
+    await this.fetch();
   }
 };
 </script>
